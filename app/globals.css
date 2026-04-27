@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes pulse-ring {
+  0%   { transform: translate(-50%,-50%) scale(1);    opacity: .35; }
+  70%  { transform: translate(-50%,-50%) scale(1.18); opacity: 0; }
+  100% { transform: translate(-50%,-50%) scale(1);    opacity: 0; }
+}
+@keyframes float-pill {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+@keyframes scan-line {
+  0%   { top: 0%;   opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+@keyframes draw-circle {
+  from { stroke-dashoffset: 565; }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes counter-flicker {
+  0%,100% { opacity: 1; }
+  50%     { opacity: .7; }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-fade-up  { animation: hero-fade-up  .7s cubic-bezier(.22,1,.36,1) both; }
+.hero-fade-in  { animation: hero-fade-in  .9s ease both; }
+
+.hero-left-content > * { opacity: 0; animation: hero-fade-up .65s cubic-bezier(.22,1,.36,1) both; }
+.hero-left-content > *:nth-child(1) { animation-delay: .05s; }
+.hero-left-content > *:nth-child(2) { animation-delay: .15s; }
+.hero-left-content > *:nth-child(3) { animation-delay: .25s; }
+.hero-left-content > *:nth-child(4) { animation-delay: .35s; }
+.hero-left-content > *:nth-child(5) { animation-delay: .45s; }
+.hero-left-content > *:nth-child(6) { animation-delay: .55s; }
+.hero-left-content > *:nth-child(7) { animation-delay: .65s; }
+
+.pill-float-1 { animation: float-pill 4s ease-in-out infinite; }
+.pill-float-2 { animation: float-pill 5s ease-in-out infinite .8s; }
+.pill-float-3 { animation: float-pill 4.5s ease-in-out infinite 1.6s; }
+
+.draw-circle-anim {
+  stroke-dasharray: 565;
+  stroke-dashoffset: 565;
+  animation: draw-circle 1.8s cubic-bezier(.4,0,.2,1) .6s forwards;
+}
+
+.scan {
+  position: absolute; left: 0; right: 0; height: 2px;
+  background: linear-gradient(to right, transparent, rgba(245,197,24,.35), transparent);
+  animation: scan-line 4s linear infinite 1.2s;
+  pointer-events: none;
+}
+
+.hero-stat-num {
+  animation: counter-flicker .15s ease .9s 2;
+}
+
+.animate-fade-up {
+  animation: fade-up .6s cubic-bezier(.22,1,.36,1) both;
+}
