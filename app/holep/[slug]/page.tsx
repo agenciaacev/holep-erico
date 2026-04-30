@@ -27,7 +27,7 @@ export async function generateMetadata({
   const variant = getVariantBySlug(slug);
   if (!variant) return {};
 
-  const baseUrl = "https://drericourologista.com.br";
+  const baseUrl = "https://holep-erico.vercel.app";
   const canonical = `${baseUrl}/holep/${variant.slug}`;
 
   return {
@@ -83,7 +83,7 @@ export default async function HolepPage({
     "@type": "Physician",
     name: "Dr. Érico Diógenes",
     description: variant.metaDescription,
-    url: `https://drericourologista.com.br/holep/${variant.slug}`,
+    url: `https://holep-erico.vercel.app/holep/${variant.slug}`,
     telephone: "+5585981781020",
     address: {
       "@type": "PostalAddress",
