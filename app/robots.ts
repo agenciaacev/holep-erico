@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://drericourologista.com.br/sitemap.xml",
+    sitemap: "https://holep-erico.vercel.app/sitemap.xml",
   };
 }

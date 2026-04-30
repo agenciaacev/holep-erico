@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { LP_VARIANTS } from "@/lib/lpVariants";
 
-const BASE_URL = "https://drericourologista.com.br";
+const BASE_URL = "https://holep-erico.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lpPages = LP_VARIANTS.map((v) => ({
